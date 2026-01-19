@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Container } from "@/components/ui/container"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { assetUrl } from "@/lib/asset"
 import type { Typography, Font } from "@/lib/brandSchema"
@@ -20,171 +21,430 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
     })
   }, [typography.fonts])
 
+  const showTabs = typography.fonts.length > 1 || typography.examples.length > 0
+
   return (
-    <div className="space-y-6">
-      {typography.fonts.length > 1 ? (
-      <Tabs defaultValue="0" className="w-full">
-        <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto">
+    <Container>
+      <div className="space-y-6">
+      {showTabs ? (
+        <Tabs defaultValue="0" className="w-full bg-transparent">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="col-span-1 md:col-span-2 md:col-start-2">
+              <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto bg-transparent gap-2">
+                {typography.fonts.map((font, idx) => (
+                  <TabsTrigger key={idx} value={idx.toString()} className="border-2 rounded-sm cursor-pointer">
+                    {font.name}
+                  </TabsTrigger>
+                ))}
+                {typography.examples.length > 0 && (
+                  <TabsTrigger value="hierarchy" className="border-2 rounded-sm cursor-pointer">Hierarchy</TabsTrigger>
+                )}
+              </TabsList>
+            </div>
+          </div>
+          
           {typography.fonts.map((font, idx) => (
-            <TabsTrigger key={idx} value={idx.toString()}>
-              {font.name}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-        
-        {typography.fonts.map((font, idx) => (
-          <TabsContent key={idx} value={idx.toString()}>
-            <Card>
-              <CardHeader>
-                <CardTitle>{font.name}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Type Scale Preview */}
-                <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground mb-4 uppercase">
-                    Type Scale
-                  </h4>
-                  <div className="space-y-3">
-                    {[48, 32, 24, 20, 16, 14, 12].map((size) => (
-                      <div key={size} className="flex items-baseline gap-4">
-                        <span className="text-xs text-muted-foreground w-12 shrink-0">
-                          {size}px
-                        </span>
+            <TabsContent key={idx} value={idx.toString()}>
+              <Card className="border-none p-0 shadow-none">
+                <CardHeader className="p-0">
+                  <div className="flex items-center justify-between">
+                    {font.source.type === "file" && font.source.files[0] && (
+                      <a
+                        href={assetUrl(font.source.files[0].src)}
+                        download
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                          <polyline points="7 10 12 15 17 10" />
+                          <line x1="12" x2="12" y1="15" y2="3" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-8 p-0 mt-12">
+
+
+
+
+
+                  {/* Weight Variations Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start ">
+                    
+                    <div className="mt-auto">
+                      {/* Large Aa */}
+                      <div className="flex items-center justify-center md:justify-start">
                         <p
                           style={{
                             fontFamily: font.name,
-                            fontSize: `${size}px`,
+                            fontSize: "120px",
+                            lineHeight: "0.8",
                           }}
+                          className="text-main-blue"
                         >
-                          The quick brown fox jumps over the lazy dog
+                          Aa
                         </p>
                       </div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Weight Variations (if available) */}
-                {font.source.type === "google" && (
-                  <div>
-                    <h4 className="text-sm font-semibold text-muted-foreground mb-4 uppercase">
-                      Available Weights
-                    </h4>
-                    <div className="space-y-2">
-                      {font.source.weights.map((weight) => (
+                    </div>
+
+                    <div className="col-span-1 md:col-span-2">
+
+                      <CardTitle className="mb-6 lowercase text-main-blue" style={{
+                      fontFamily: font.name,
+                      fontWeight: 300
+                      }}>{font.name}</CardTitle>
+
+                      {/* Alphabet Display */}
+                      <div className="text-left">
                         <p
-                          key={weight}
                           style={{
                             fontFamily: font.name,
-                            fontWeight: weight,
-                            fontSize: "16px",
+                            fontSize: "32px",
+                            lineHeight: "1.4",
                           }}
+                          className="text-main-blue"
                         >
-                          Weight {weight}: The quick brown fox jumps
+                          Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
                         </p>
-                      ))}
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-8">
+                        
+                        <div className="">
+                          {/* Weight Labels */}
+                          {font.source.type === "google" && (
+                            <div className="flex flex-col w-full">
+                            
+                              <div className="flex flex-col justify-center space-y-3">
+                                
+                                {font.source.weights.map((weight) => (
+                                  <p
+                                    key={weight}
+                                    style={{
+                                      fontFamily: font.name,
+                                      fontWeight: weight,
+                                      fontSize: "20px",
+                                    }}
+                                    className="text-main-blue"
+                                  >
+                                    {getWeightName(weight)}
+                                  </p>
+                                ))}
+                            </div>
+                            </div>
+                          )}
+                          {font.source.type === "file" && (
+                            <div className="flex flex-col justify-center space-y-3">
+                              {font.source.files.map((file, fileIdx) => (
+                                <p
+                                  key={fileIdx}
+                                  style={{
+                                    fontFamily: font.name,
+                                    fontWeight: file.weight,
+                                    fontStyle: file.style,
+                                    fontSize: "20px",
+                                  }}
+                                  className="text-main-blue"
+                                >
+                                  {getWeightName(file.weight)}
+                                </p>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="">
+                          {/* Example Text */}
+                          {font.source.type === "google" && (
+                            <div className="flex flex-col justify-center space-y-3">
+                              {font.source.weights.map((weight) => (
+                                <p
+                                  key={weight}
+                                  style={{
+                                    fontFamily: font.name,
+                                    fontWeight: weight,
+                                    fontSize: "20px",
+                                  }}
+                                  className="text-main-blue"
+                                >
+                                  welcome to chapel house
+                                </p>
+                              ))}
+                            </div>
+                          )}
+                          {font.source.type === "file" && (
+                            <div className="flex flex-col justify-center space-y-3">
+                              {font.source.files.map((file, fileIdx) => (
+                                <p
+                                  key={fileIdx}
+                                  style={{
+                                    fontFamily: font.name,
+                                    fontWeight: file.weight,
+                                    fontStyle: file.style,
+                                    fontSize: "20px",
+                                  }}
+                                  className="text-main-blue"
+                                >
+                                  welcome to chapel house
+                                </p>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    
+
+                    
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          ))}
+
+          {/* Hierarchy Tab */}
+          {typography.examples.length > 0 && (
+            <TabsContent value="hierarchy" className="mt-5">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-8">
+
+                <div className="text-right">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">TITLE</p>
+                  <p className="text-xs text-muted-foreground mt-1">MARTEL REGULAR, LOWER CASE</p>
+                  <p className="text-xs text-[#A2BAC5] mt-1">HARBOUR BLUE</p>
+                </div>
+
+                <div className="md:col-span-2">
+                  <h1 className="text-5xl md:text-6xl text-[#335C70]" style={{ fontFamily: 'Martel', fontWeight: 400 }}>
+                    workshops at chapel house
+                  </h1>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
+                <div className="text-right">
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">SUB HEADER</p>
+                    <p className="text-xs text-muted-foreground mt-1">MULISH REGULAR, UPPER CASE</p>
+                    <p className="text-xs text-[#A2BAC5] mt-1">SEA MIST BLUE</p>
+                  </div>
+
+                <div className="md:col-span-2">
+                  <h2 className="text-2xl md:text-3xl text-[#A2BAC5] uppercase tracking-wide" style={{ fontFamily: 'Mulish', fontWeight: 400 }}>
+                    OCTOBER WORKSHOPS
+                  </h2>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
+                <div className="text-right">
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">BODY COPY</p>
+                    <p className="text-xs text-muted-foreground mt-1">MULISH REGULAR, SENTENCE CASE</p>
+                    <p className="text-xs text-[#A2BAC5] mt-1">HARBOUR BLUE</p>
+                  </div>
+
+                <div className="md:col-span-2">
+                    <div className="text-base text-[#335C70] space-y-2" style={{ fontFamily: 'Mulish', fontWeight: 400 }}>
+                      <p>18<sup>th</sup> - Money Mindset with Mindset Coach & EFT Practitioner</p>
+                      <p>24<sup>th</sup> - Ink Drawing Workshop with Local Artist</p>
+                      <p>25<sup>th</sup> - Herbal Sauna Ritual with Medical Herbalist</p>
                     </div>
                   </div>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
-        ))}
-      </Tabs>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
+                <div className="text-right">
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">BUTTON</p>
+                    <p className="text-xs text-muted-foreground mt-1">MULISH SEMIBOLD, TITLE CASE</p>
+                    <p className="text-xs text-[#A2BAC5] mt-1">CHALK LINEN</p>
+                  </div>
+
+                 <div className="md:col-span-2">
+                    <button 
+                      className="px-13 py-3 text-[#F3EFE6] bg-[#D87337]" 
+                      style={{ fontFamily: 'Mulish', fontWeight: 600 }}
+                    >
+                      Explore Now
+                    </button>
+                  </div>
+              </div>
+
+              
+            </TabsContent>
+          )}
+        </Tabs>
       ) : (
-        /* Single font - no tabs needed */
+        /* Single font, no examples - no tabs needed */
         typography.fonts.map((font, idx) => (
           <Card key={idx}>
             <CardHeader>
-              <CardTitle>{font.name}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Type Scale Preview */}
-              <div>
-                <h4 className="text-sm font-semibold text-muted-foreground mb-4 uppercase">
-                  Type Scale
-                </h4>
-                <div className="space-y-3">
-                  {[48, 32, 24, 20, 16, 14, 12].map((size) => (
-                    <div key={size} className="flex items-baseline gap-4">
-                      <span className="text-xs text-muted-foreground w-12 shrink-0">
-                        {size}px
-                      </span>
-                      <p
-                        style={{
-                          fontFamily: font.name,
-                          fontSize: `${size}px`,
-                        }}
-                      >
-                        The quick brown fox jumps over the lazy dog
-                      </p>
-                    </div>
-                  ))}
-                </div>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-main-blue">{font.name}</CardTitle>
+                {font.source.type === "file" && font.source.files[0] && (
+                  <a
+                    href={assetUrl(font.source.files[0].src)}
+                    download
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" x2="12" y1="15" y2="3" />
+                    </svg>
+                  </a>
+                )}
               </div>
-              
-              {/* Weight Variations (if available) */}
-              {font.source.type === "google" && (
-                <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground mb-4 uppercase">
-                    Available Weights
-                  </h4>
-                  <div className="space-y-2">
+            </CardHeader>
+            <CardContent className="space-y-8">
+              {/* Alphabet Display */}
+              <div className="text-center">
+                <p
+                  style={{
+                    fontFamily: font.name,
+                    fontSize: "32px",
+                    lineHeight: "1.4",
+                  }}
+                  className="text-main-blue"
+                >
+                  Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
+                </p>
+              </div>
+
+              {/* Weight Variations Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                {/* Large Aa */}
+                <div className="flex items-center justify-center md:justify-start">
+                  <p
+                    style={{
+                      fontFamily: font.name,
+                      fontSize: "120px",
+                      lineHeight: "1",
+                    }}
+                    className="text-main-blue"
+                  >
+                    Aa
+                  </p>
+                </div>
+
+                {/* Weight Labels */}
+                {font.source.type === "google" && (
+                  <div className="flex flex-col justify-center space-y-3">
                     {font.source.weights.map((weight) => (
                       <p
                         key={weight}
                         style={{
                           fontFamily: font.name,
                           fontWeight: weight,
-                          fontSize: "16px",
+                          fontSize: "20px",
                         }}
+                        className="text-main-blue"
                       >
-                        Weight {weight}: The quick brown fox jumps
+                        {getWeightName(weight)}
                       </p>
                     ))}
                   </div>
-                </div>
-              )}
+                )}
+                {font.source.type === "file" && (
+                  <div className="flex flex-col justify-center space-y-3">
+                    {font.source.files.map((file, fileIdx) => (
+                      <p
+                        key={fileIdx}
+                        style={{
+                          fontFamily: font.name,
+                          fontWeight: file.weight,
+                          fontStyle: file.style,
+                          fontSize: "20px",
+                        }}
+                        className="text-main-blue"
+                      >
+                        {getWeightName(file.weight)}
+                      </p>
+                    ))}
+                  </div>
+                )}
+
+                {/* Example Text */}
+                {font.source.type === "google" && (
+                  <div className="flex flex-col justify-center space-y-3">
+                    {font.source.weights.map((weight) => (
+                      <p
+                        key={weight}
+                        style={{
+                          fontFamily: font.name,
+                          fontWeight: weight,
+                          fontSize: "20px",
+                        }}
+                        className="text-main-blue"
+                      >
+                        welcome to chapel house
+                      </p>
+                    ))}
+                  </div>
+                )}
+                {font.source.type === "file" && (
+                  <div className="flex flex-col justify-center space-y-3">
+                    {font.source.files.map((file, fileIdx) => (
+                      <p
+                        key={fileIdx}
+                        style={{
+                          fontFamily: font.name,
+                          fontWeight: file.weight,
+                          fontStyle: file.style,
+                          fontSize: "20px",
+                        }}
+                        className="text-main-blue"
+                      >
+                        welcome to chapel house
+                      </p>
+                    ))}
+                  </div>
+                )}
+              </div>
             </CardContent>
           </Card>
         ))
       )}
-
-      {/* Typography Examples */}
-      {typography.examples.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Usage Examples</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            {typography.examples.map((example, idx) => (
-              <div key={idx} className="space-y-2">
-                <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                  <span className="font-semibold">{example.label}</span>
-                  <span>•</span>
-                  <span>{example.font}</span>
-                  <span>•</span>
-                  <span>{example.sizePx}px</span>
-                  <span>•</span>
-                  <span>Weight {example.weight}</span>
-                </div>
-                <p
-                  style={{
-                    fontFamily: example.font,
-                    fontSize: `${example.sizePx}px`,
-                    fontWeight: example.weight,
-                    lineHeight: example.lineHeight,
-                    letterSpacing: example.letterSpacing,
-                  }}
-                >
-                  {example.text}
-                </p>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      )}
-    </div>
+      </div>
+    </Container>
   )
+}
+
+function getWeightName(weight: number): string {
+  const weightNames: Record<number, string> = {
+    100: "thin",
+    200: "extra light",
+    300: "light",
+    400: "regular",
+    500: "medium",
+    600: "semi bold",
+    700: "bold",
+    800: "extra bold",
+    900: "black",
+  }
+  return weightNames[weight] || `weight ${weight}`
 }
 
 function loadGoogleFont(font: Font) {

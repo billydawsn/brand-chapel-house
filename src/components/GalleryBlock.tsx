@@ -6,6 +6,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog"
+import { Container } from "@/components/ui/container"
 import { assetUrl } from "@/lib/asset"
 import type { GalleryItem } from "@/lib/brandSchema"
 
@@ -18,7 +19,8 @@ export function GalleryBlock({ gallery }: GalleryBlockProps) {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <Container>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {gallery.map((item, idx) => (
           <button
             key={idx}
@@ -38,7 +40,8 @@ export function GalleryBlock({ gallery }: GalleryBlockProps) {
             )}
           </button>
         ))}
-      </div>
+        </div>
+      </Container>
 
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-4xl p-0">

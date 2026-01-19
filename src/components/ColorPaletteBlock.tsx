@@ -3,6 +3,7 @@ import { Copy } from "lucide-react"
 import { toast } from "sonner"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Container } from "@/components/ui/container"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { getColorContrast } from "@/lib/contrast"
@@ -44,19 +45,26 @@ export function ColorPaletteBlock({ colors }: ColorPaletteBlockProps) {
 
   // Filter colors based on selected role
   const filteredColors = useMemo(() => {
-    if (selectedRole === "all") return colors
+    if (selectedRole === "all") {
+      // Exclude opacity variants from All Colors view
+      return colors.filter((color) => 
+        !color.role?.includes("Primary Opacity") && 
+        !color.role?.includes("Secondary Opacity")
+      )
+    }
     return colors.filter((color) => color.role?.includes(selectedRole))
   }, [colors, selectedRole])
 
   return (
-    <div className="space-y-6">
+    <Container>
+      <div className="space-y-6 mt-6">
       {/* Role Filter Tabs */}
       {roles.length > 1 && (
-        <Tabs value={selectedRole} onValueChange={setSelectedRole} className="w-full">
-          <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto">
-            <TabsTrigger value="all">All Colors</TabsTrigger>
+        <Tabs value={selectedRole} onValueChange={setSelectedRole} className="w-full bg-transparent">
+          <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto bg-transparent gap-2">
+            <TabsTrigger value="all" className="border-2 rounded-sm cursor-pointer">All Colors</TabsTrigger>
             {roles.map((role) => (
-              <TabsTrigger key={role} value={role}>
+              <TabsTrigger key={role} value={role} className="border-2 rounded-sm cursor-pointer">
                 {role}
               </TabsTrigger>
             ))}
@@ -65,21 +73,34 @@ export function ColorPaletteBlock({ colors }: ColorPaletteBlockProps) {
       )}
 
       {/* Color Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 grid-cols-1 lg:grid-cols-12">
       {filteredColors.map((color, idx) => (
           <Card 
             key={idx} 
-            className="overflow-hidden cursor-pointer transition-all hover:shadow-lg hover:scale-[1.02]"
+            className={`overflow-hidden cursor-pointer transition-all hover:shadow-lg hover:scale-[1.02] rounded-none shadow-none ${
+              color.role?.includes("Primary") 
+                ? "col-span-2 lg:col-span-6" 
+                : color.role?.includes("Primary Opacity") || color.role?.includes("Secondary Opacity")
+                ? "col-span-3" 
+                : "col-span-4"
+            }`}
             onClick={() => setSelectedColor(color)}
           >
             <div
-              className="h-32 w-full"
+              className={`w-full ${color.role?.includes("Secondary Opacity") ? "h-28" : "h-52"}`}
               style={{ backgroundColor: color.values.hex }}
             />
             <CardHeader className="pb-4">
-              <CardTitle className="text-lg">{color.name}</CardTitle>
+              <CardTitle className="text-lg">
+                {color.name}
+                {color.opacity && (
+                  <div className="text-sm font-normal text-muted-foreground mt-1">
+                    {color.opacity}
+                  </div>
+                )}
+              </CardTitle>
               <CardDescription className="flex items-center justify-between">
-                <span className="font-mono text-sm">{color.values.hex}</span>
+                <span className="text-sm">{color.values.hex}</span>
                 <Button
                   size="sm"
                   variant="ghost"
@@ -202,7 +223,8 @@ export function ColorPaletteBlock({ colors }: ColorPaletteBlockProps) {
           )}
         </DialogContent>
       </Dialog>
-    </div>
+      </div>
+    </Container>
   )
 }
 

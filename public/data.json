@@ -1,192 +1,398 @@
 {
   "brand": {
-    "name": "Seed",
+    "name": "Chapel House",
     "description": "These guidelines will provide you with everything you need to implement Seed’s brand identity in the right way. ",
     "website": "https://helloseed.co.uk/",
     "updatedAt": "2026-01-14"
   },
   "logos": [
     {
-      "name": "Wordmark",
-      "description": "Clean, fresh, and modern - that’s the Seed logo. \n\nThe ‘S’ resembles a plant, with flourishing leaves. This aligns with the growth we achieve for our clients, the leaves being the results. The hole in the letter ‘d’ is our own seed shape, used in our icon, and is one of our key branding graphics. The logo speaks of self assurance, calm and confidence, turning heads naturally without the need for any attention-grabbing gimmicks.",
+      "name": "Primary Logo - Dark",
+      "description": "The primary logo is to be used in most instances. It is available in dark and light variations to ensure maximum legibility across different backgrounds.",
       "variants": [
         {
           "label": "PNG",
-          "src": "/assets/logos/wordmark-1.png"
+          "src": "/assets/logos/image-1.png",
+          "assetPath": "/assets/logos/chapel-house-logos-harbour-blue.zip"
         },
         {
           "label": "PNG",
-          "src": "/assets/logos/wordmark-2.png"
-        },
-        {
-          "label": "SVG",
-          "src": "/assets/logos/wordmark-3.svg"
-        },
-        {
-          "label": "SVG",
-          "src": "/assets/logos/wordmark-4.svg"
-        }
-      ]
-    },
-    {
-      "name": "Icon",
-      "description": "This icon style can also be used...",
-      "variants": [
-        {
-          "label": "PNG",
-          "src": "/assets/logos/icon-1.png"
-        },
-        {
-          "label": "PNG",
-          "src": "/assets/logos/icon-2.png"
-        },
-        {
-          "label": "SVG",
-          "src": "/assets/logos/icon-3.svg"
-        },
-        {
-          "label": "SVG",
-          "src": "/assets/logos/icon-4.svg"
+          "src": "/assets/logos/image-2.png",
+          "assetPath": "/assets/logos/chapel-house-logos-chalk-linen.zip"
         }
       ]
     }
   ],
-  "colors": [
+  "exclusionZone": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "mainImage": "/assets/exclusion-zone/image-1.webp",
+    "examples": [
+      "/assets/exclusion-zone/image-2.webp",
+      "/assets/exclusion-zone/image-3.webp",
+      "/assets/exclusion-zone/image-4.webp"
+    ]
+  },
+  "incorrectUsage": [
     {
-      "name": "Seed Teal",
+      "caption": "Do not distort or warp the logo in any way",
+      "src": "/assets/incorrect-usage/image-1.webp"
+    },
+    {
+      "caption": "Do not overlay the logo with elements that compromise legibility",
+      "src": "/assets/incorrect-usage/image-2.webp"
+    },
+    {
+      "caption": "Do not rotate the logo",
+      "src": "/assets/incorrect-usage/image-3.webp"
+    },
+    {
+      "caption": "Do not recolour any variation of the logo",
+      "src": "/assets/incorrect-usage/image-4.webp"
+    },
+    {
+      "caption": "Do not use a drop shadow or any other effect on the logo",
+      "src": "/assets/incorrect-usage/image-5.webp"
+    },
+    {
+      "caption": "Do not use the dark logo against dark images and the light logo on light images",
+      "src": "/assets/incorrect-usage/image-6.webp"
+    }
+  ],
+  "fullwidthBlocks": [
+    {
+      "image": "/assets/fullwidth/image-1.webp",
+      "alt": "Brand showcase"
+    },
+    {
+      "image": "/assets/fullwidth/image-2.webp",
+      "alt": "Design inspiration"
+    },
+    {
+      "image": "/assets/fullwidth/image-3.webp",
+      "alt": "Creative example"
+    }
+  ],
+ "colors": [
+    {
+      "name": "Harbour Blue",
       "role": [
         "Primary"
       ],
       "values": {
-        "hex": "#035259",
-        "rgb": "3, 82, 89",
-        "cmyk": "97, 8, 0, 65"
+        "hex": "#335C70",
+        "rgb": "51, 92, 112",
+        "cmyk": "54, 18, 0, 56"
       }
     },
     {
-      "name": "Lime Green",
+      "name": "Chalk Linen",
       "role": [
         "Primary"
       ],
       "values": {
-        "hex": "#DBF22E",
-        "rgb": "219, 242, 46",
-        "cmyk": "10, 0, 81, 5"
+        "hex": "#F3EFE6",
+        "rgb": "243, 239, 230",
+        "cmyk": "0, 2, 5, 5"
       }
     },
     {
-      "name": "Oat",
-      "role": [
-        "Primary"
-      ],
-      "values": {
-        "hex": "#F7F5EB",
-        "rgb": "247, 245, 235",
-        "cmyk": "0, 1, 5, 3"
-      }
-    },
-    {
-      "name": "Leaf Green",
-      "role": [
-        "Secondary",
-        "Data"
-      ],
-      "values": {
-        "hex": "#A0C63A",
-        "rgb": "160, 198, 58",
-        "cmyk": "19, 0, 71, 22"
-      }
-    },
-    {
-      "name": "Burnt Orange",
-      "role": [
-        "Secondary",
-        "Data"
-      ],
-      "values": {
-        "hex": "#FF6B35",
-        "rgb": "255, 107, 53",
-        "cmyk": "0, 58, 79, 0"
-      }
-    },
-    {
-      "name": "Off White",
+      "name": "Sea Mist Blue",
       "role": [
         "Secondary"
       ],
       "values": {
-        "hex": "#FEFEFE",
-        "rgb": "254, 254, 254",
-        "cmyk": "0, 0, 0, 0"
+        "hex": "#A2BAC5",
+        "rgb": "162, 186, 197",
+        "cmyk": "18, 6, 0, 23"
       }
     },
     {
-      "name": "Charcoal",
+      "name": "Burnt Clay",
       "role": [
         "Secondary"
       ],
       "values": {
-        "hex": "#3E3E3E",
-        "rgb": "62, 62, 62",
-        "cmyk": "0, 0, 0, 76"
+        "hex": "#D87337",
+        "rgb": "216, 115, 55",
+        "cmyk": "0, 47, 75, 15"
       }
     },
     {
-      "name": "Positive",
+      "name": "Golden Shore",
       "role": [
-        "Data"
+        "Secondary"
       ],
       "values": {
-        "hex": "#43B228",
-        "rgb": "67, 178, 40",
-        "cmyk": "62, 0, 78, 30"
+        "hex": "#EECE8E",
+        "rgb": "238, 206, 142",
+        "cmyk": "0, 13, 40, 7"
       }
     },
     {
-      "name": "Negative",
+      "name": "Harbour Blue",
+      "opacity": "100%",
       "role": [
-        "Data"
+        "Primary Opacity"
       ],
       "values": {
-        "hex": "#FF4525",
-        "rgb": "255, 69, 37",
-        "cmyk": "0, 73, 85, 0"
+        "hex": "#335C70",
+        "rgb": "51, 92, 112",
+        "cmyk": "54, 18, 0, 56"
       }
     },
     {
-      "name": "Ocean Blue",
+      "name": "Harbour Blue",
+      "opacity": "75%",
       "role": [
-        "Data"
+        "Primary Opacity"
       ],
       "values": {
-        "hex": "#219099",
-        "rgb": "33, 144, 153",
-        "cmyk": "78, 6, 0, 40"
+        "hex": "#668594",
+        "rgb": "102, 181, 148",
+        "cmyk": "42, 0, 18, 29"
       }
     },
     {
-      "name": "Mustard Yellow",
+      "name": "Harbour Blue",
+      "opacity": "50%",
       "role": [
-        "Data"
+        "Primary Opacity"
       ],
       "values": {
-        "hex": "#EDCC15",
-        "rgb": "237, 204, 21",
-        "cmyk": "0, 14, 91, 7"
+        "hex": "#99ADB7",
+        "rgb": "153, 173, 183",
+        "cmyk": "16, 5, 0, 28"
+      }
+    },
+    {
+      "name": "Harbour Blue",
+      "opacity": "25%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#CCD6DB",
+        "rgb": "204, 214, 219",
+        "cmyk": "7, 2, 0, 14"
+      }
+    },
+    {
+      "name": "Chalk Linen",
+      "opacity": "100%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#F3EFE6",
+        "rgb": "243, 239, 230",
+        "cmyk": "0, 2, 5, 5"
+      }
+    },
+    {
+      "name": "Chalk Linen",
+      "opacity": "75%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#F6F3EC",
+        "rgb": "246, 243, 236",
+        "cmyk": "0, 1, 4, 4"
+      }
+    },
+    {
+      "name": "Chalk Linen",
+      "opacity": "50%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#F9F7F3",
+        "rgb": "249, 247, 243",
+        "cmyk": "0, 1, 2, 2"
+      }
+    },
+    {
+      "name": "Chalk Linen",
+      "opacity": "25%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#FCFBF9",
+        "rgb": "252, 251, 249",
+        "cmyk": "0, 0, 1, 1"
+      }
+    },
+    {
+      "name": "Sea Mist Blue",
+      "opacity": "100%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#A2BAC5",
+        "rgb": "162, 186, 197",
+        "cmyk": "18, 6, 0, 23"
+      }
+    },
+    {
+      "name": "Sea Mist Blue",
+      "opacity": "75%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#B9CBD3",
+        "rgb": "185, 203, 211",
+        "cmyk": "12, 4, 0, 17"
+      }
+    },
+    {
+      "name": "Sea Mist Blue",
+      "opacity": "50%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#D1DDE2",
+        "rgb": "209, 221, 226",
+        "cmyk": "8, 2, 0, 11"
+      }
+    },
+    {
+      "name": "Sea Mist Blue",
+      "opacity": "25%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#E8EEF1",
+        "rgb": "232, 238, 241",
+        "cmyk": "4, 1, 0, 5"
+      }
+    },
+    {
+      "name": "Burnt Clay",
+      "opacity": "100%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#D87337",
+        "rgb": "216, 115, 55",
+        "cmyk": "0, 47, 75, 15"
+      }
+    },
+    {
+      "name": "Burnt Clay",
+      "opacity": "75%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#E29669",
+        "rgb": "226, 150, 105",
+        "cmyk": "0, 34, 54, 11"
+      }
+    },
+    {
+      "name": "Burnt Clay",
+      "opacity": "50%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#EBB99B",
+        "rgb": "235, 185, 155",
+        "cmyk": "0, 21, 34, 8"
+      }
+    },
+    {
+      "name": "Burnt Clay",
+      "opacity": "25%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#F5DCCD",
+        "rgb": "245, 220, 205",
+        "cmyk": "0, 10, 16, 4"
+      }
+    },
+    {
+      "name": "Golden Shore",
+      "opacity": "100%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#EECE8E",
+        "rgb": "238, 206, 142",
+        "cmyk": "0, 13, 40, 7"
+      }
+    },
+    {
+      "name": "Golden Shore",
+      "opacity": "75%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#F2DAAA",
+        "rgb": "242, 218, 170",
+        "cmyk": "0, 10, 30, 5"
+      }
+    },
+    {
+      "name": "Golden Shore",
+      "opacity": "50%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#F7E7C7",
+        "rgb": "247, 231, 199",
+        "cmyk": "0, 6, 19, 3"
+      }
+    },
+    {
+      "name": "Golden Shore",
+      "opacity": "25%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#FBF3E3",
+        "rgb": "251, 243, 227",
+        "cmyk": "0, 3, 10, 2"
       }
     }
   ],
   "typography": {
     "fonts": [
       {
-        "name": "Outfit",
+        "name": "Martel",
         "source": {
           "type": "google",
-          "family": "Outfit",
+          "family": "Martel",
           "weights": [
-            200,
             300,
-            500
+            400,
+            600
+          ]
+        }
+      },
+      {
+        "name": "Mulish",
+        "source": {
+          "type": "google",
+          "family": "Mulish",
+          "weights": [
+            300,
+            400,
+            600,
+            700
           ]
         }
       }
@@ -204,7 +410,7 @@
         "font": "Outfit",
         "sizePx": 48,
         "weight": 300,
-        "text": "Shaped by  strong values."
+        "text": "Shaped by strong values."
       },
       {
         "label": "Heading 1",

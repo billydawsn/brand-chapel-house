@@ -1,5 +1,5 @@
 import { type ReactNode, useState } from "react"
-import { Menu, X, ExternalLink } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { BrandInfo } from "@/lib/brandSchema"
 
@@ -29,11 +29,6 @@ export function PageShell({ brand, sections, children }: PageShellProps) {
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1">
               <h1 className="text-xl font-bold">{brand.name}</h1>
-              {brand.description && (
-                <p className="text-sm text-muted-foreground hidden sm:block">
-                  {brand.description}
-                </p>
-              )}
             </div>
             
             {/* Desktop Navigation */}
@@ -84,40 +79,16 @@ export function PageShell({ brand, sections, children }: PageShellProps) {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Brand Info Banner */}
-        <div className="mb-12 space-y-2">
-          {brand.description && (
-            <p className="text-lg text-muted-foreground sm:hidden">
-              {brand.description}
-            </p>
-          )}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            {brand.website && (
-              <a
-                href={brand.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 hover:text-foreground transition-colors"
-              >
-                <ExternalLink className="h-4 w-4" />
-                Visit Website
-              </a>
-            )}
-            <span>•</span>
-            <span>Last updated: {brand.updatedAt}</span>
-          </div>
-        </div>
-
+      <main className="pt-12">
         {/* Page Content */}
         <div className="space-y-16">{children}</div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t mt-24">
+      <footer className="">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-center text-sm text-muted-foreground">
-            Powered by static data.json
+          <p className="text-center text-sm text-main-blue">
+            Made with ❤️ by Seed
           </p>
         </div>
       </footer>
