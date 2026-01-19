@@ -30,7 +30,7 @@ export function ExclusionZoneBlock({ exclusionZone }: ExclusionZoneBlockProps) {
       {/* Example images below */}
       {exclusionZone.examples && exclusionZone.examples.length > 0 && (
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {exclusionZone.examples.map((example, idx) => (
+          {exclusionZone.examples.map((example: string, idx: number) => (
             <div
               key={idx}
               className="flex items-center justify-center bg-muted/50 rounded-lg"

@@ -129,4 +129,6 @@ export type TypographyExample = z.infer<typeof TypographyExampleSchema>
 export type Typography = z.infer<typeof TypographySchema>
 export type IncorrectUsageItem = z.infer<typeof IncorrectUsageItemSchema>
 export type GalleryItem = z.infer<typeof GalleryItemSchema>
+export type ExclusionZone = z.infer<typeof ExclusionZoneSchema>
+export type FullwidthBlock = z.infer<typeof FullwidthBlockSchema>
 export type BrandInfo = z.infer<typeof BrandInfoSchema>
