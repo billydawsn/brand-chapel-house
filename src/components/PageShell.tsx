@@ -24,7 +24,7 @@ export function PageShell({ brand, sections, children }: PageShellProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1">
@@ -37,7 +37,7 @@ export function PageShell({ brand, sections, children }: PageShellProps) {
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className="transition-colors hover:text-foreground/80 text-foreground/60"
+                  className="transition-colors text-[#A2BAC5] hover:text-foreground cursor-pointer"
                 >
                   {section.label}
                 </button>
@@ -67,7 +67,7 @@ export function PageShell({ brand, sections, children }: PageShellProps) {
                   <button
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
-                    className="block w-full text-left px-2 py-2 text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60"
+                    className="block w-full text-left px-2 py-2 text-sm font-medium transition-colors hover:text-foreground/80 text-[#A2BAC5] cursor-pointer"
                   >
                     {section.label}
                   </button>

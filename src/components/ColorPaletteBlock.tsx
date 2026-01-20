@@ -79,10 +79,10 @@ export function ColorPaletteBlock({ colors }: ColorPaletteBlockProps) {
             key={idx} 
             className={`overflow-hidden cursor-pointer transition-all hover:shadow-lg hover:scale-[1.02] rounded-none shadow-none ${
               color.role?.includes("Primary") 
-                ? "col-span-2 lg:col-span-6" 
+                ? "col-span-1 lg:col-span-6" 
                 : color.role?.includes("Primary Opacity") || color.role?.includes("Secondary Opacity")
-                ? "col-span-3" 
-                : "col-span-4"
+                ? "col-span-1 lg:col-span-3" 
+                : "col-span-1 lg:col-span-4"
             }`}
             onClick={() => setSelectedColor(color)}
           >

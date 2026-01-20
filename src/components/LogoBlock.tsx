@@ -23,7 +23,7 @@ export function LogoBlock({ logos }: LogoBlockProps) {
                   key={vIdx}
                   className="flex flex-col space-y-3"
                 >
-                  <div className="flex aspect-video items-center justify-center bg-muted/50 rounded">
+                  <div className="flex items-center justify-center bg-muted/50 rounded">
                     <img
                       src={assetUrl(variant.src)}
                       alt={`${logo.name} - ${variant.label}`}

@@ -129,6 +129,7 @@
     font-family: 'Martel', serif;
     font-weight: 300!important;
     color: #335C70;
+    text-transform: lowercase;
   }
   .text-main-blue {
     color: var(--main-blue);

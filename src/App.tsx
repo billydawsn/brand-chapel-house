@@ -86,9 +86,9 @@ function App() {
   // Determine which sections are visible
   const sections = [
     { id: "logos", label: "Logos", visible: !!data.logos?.length },
-    { id: "exclusion-zone", label: "Exclusion Zone", visible: !!data.exclusionZone },
-    { id: "incorrect-usage", label: "Incorrect Usage", visible: !!data.incorrectUsage?.length },
-    { id: "colors", label: "Colors", visible: !!data.colors?.length },
+    { id: "exclusion-zone", label: "Exclusion Zone", visible: false },
+    { id: "incorrect-usage", label: "Incorrect Usage", visible: false },
+    { id: "colors", label: "Colours", visible: !!data.colors?.length },
     { id: "typography", label: "Typography", visible: !!data.typography },
     { id: "gallery", label: "Gallery", visible: !!data.gallery?.length },
   ]

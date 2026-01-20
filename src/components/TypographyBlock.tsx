@@ -4,6 +4,8 @@ import { Container } from "@/components/ui/container"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { assetUrl } from "@/lib/asset"
 import type { Typography, Font } from "@/lib/brandSchema"
+import { Download } from "lucide-react"
+
 
 interface TypographyBlockProps {
   typography: Typography
@@ -22,6 +24,11 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
   }, [typography.fonts])
 
   const showTabs = typography.fonts.length > 1 || typography.examples.length > 0
+
+  const typePreviews = {
+    'martel': 'welcome to chapel house',
+    'mulish': 'Explore the varied beauty of West Cornwall',
+  } as { [key: string]: string }
 
   return (
     <Container>
@@ -75,17 +82,12 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-8 p-0 mt-12">
-
-
-
-
-
                   {/* Weight Variations Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start ">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                     
                     <div className="mt-auto">
                       {/* Large Aa */}
-                      <div className="flex items-center justify-center md:justify-start">
+                      <div className="flex items-center justify-start">
                         <p
                           style={{
                             fontFamily: font.name,
@@ -100,12 +102,26 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
                     </div>
 
                     <div className="col-span-1 md:col-span-2">
+                      
+                      <div className="flex gap-3 items-center mb-6 ">
+                        <CardTitle className="lowercase text-main-blue" style={{
+                        fontFamily: font.name,
+                        fontWeight: 300
+                        }}>{font.name}</CardTitle>
 
-                      <CardTitle className="mb-6 lowercase text-main-blue" style={{
-                      fontFamily: font.name,
-                      fontWeight: 300
-                      }}>{font.name}</CardTitle>
-
+                        {/* google download link if google font */}
+                        {font.source.type === "google" && (
+                          <a
+                            href={`https://fonts.google.com/specimen/${font.source.family.replace(/ /g, "+")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center"
+                          >
+                            <Download className="h-4 w-4 inline-block text-muted-foreground" />
+                          </a>
+                        )}                        
+                      </div>
+                      
                       {/* Alphabet Display */}
                       <div className="text-left">
                         <p
@@ -120,33 +136,47 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-8">
+                      <div className="items-start mt-8">
                         
                         <div className="">
                           {/* Weight Labels */}
                           {font.source.type === "google" && (
-                            <div className="flex flex-col w-full">
-                            
-                              <div className="flex flex-col justify-center space-y-3">
-                                
+                            <div className="">
+
                                 {font.source.weights.map((weight) => (
-                                  <p
-                                    key={weight}
-                                    style={{
-                                      fontFamily: font.name,
-                                      fontWeight: weight,
-                                      fontSize: "20px",
-                                    }}
-                                    className="text-main-blue"
-                                  >
-                                    {getWeightName(weight)}
-                                  </p>
+                                  <div key={weight} className="grid md:grid-cols-4 gap-2 md:gap-8 py-6 border-b md:py-0 md:mt-3 md:border-b-0">
+                                    <div className="col-span-1">
+                                      <p
+                                        key={weight}
+                                        style={{
+                                          fontFamily: font.name,
+                                          fontWeight: weight,
+                                          fontSize: "20px",
+                                        }}
+                                        className="text-main-blue"
+                                      >
+                                        {getWeightName(weight)}
+                                      </p>
+                                    </div>
+                                    <div className="col-span-3">
+                                      {/* Example Text */}
+                                      <p
+                                        style={{
+                                          fontFamily: font.name,
+                                          fontWeight: weight,
+                                          fontSize: "20px",
+                                        }}
+                                        className="text-main-blue md:text-right"
+                                      >
+                                        {typePreviews[font.name.toLowerCase()] || 'welcome to chapel house'}
+                                      </p>
+                                    </div>
+                                  </div>
                                 ))}
-                            </div>
                             </div>
                           )}
                           {font.source.type === "file" && (
-                            <div className="flex flex-col justify-center space-y-3">
+                            <div className="col-span-1">
                               {font.source.files.map((file, fileIdx) => (
                                 <p
                                   key={fileIdx}
@@ -159,45 +189,6 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
                                   className="text-main-blue"
                                 >
                                   {getWeightName(file.weight)}
-                                </p>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-
-                        <div className="">
-                          {/* Example Text */}
-                          {font.source.type === "google" && (
-                            <div className="flex flex-col justify-center space-y-3">
-                              {font.source.weights.map((weight) => (
-                                <p
-                                  key={weight}
-                                  style={{
-                                    fontFamily: font.name,
-                                    fontWeight: weight,
-                                    fontSize: "20px",
-                                  }}
-                                  className="text-main-blue"
-                                >
-                                  welcome to chapel house
-                                </p>
-                              ))}
-                            </div>
-                          )}
-                          {font.source.type === "file" && (
-                            <div className="flex flex-col justify-center space-y-3">
-                              {font.source.files.map((file, fileIdx) => (
-                                <p
-                                  key={fileIdx}
-                                  style={{
-                                    fontFamily: font.name,
-                                    fontWeight: file.weight,
-                                    fontStyle: file.style,
-                                    fontSize: "20px",
-                                  }}
-                                  className="text-main-blue"
-                                >
-                                  welcome to chapel house
                                 </p>
                               ))}
                             </div>
@@ -222,9 +213,9 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
             <TabsContent value="hierarchy" className="mt-5">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-8">
 
-                <div className="text-right">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">TITLE</p>
-                  <p className="text-xs text-muted-foreground mt-1">MARTEL REGULAR, LOWER CASE</p>
+                <div className="text-left md:text-right">
+                  <p className="text-xs font-semibold text-[#335C70] uppercase tracking-wide">TITLE</p>
+                  <p className="text-xs text-[#335C70] mt-1">MARTEL REGULAR, LOWER CASE</p>
                   <p className="text-xs text-[#A2BAC5] mt-1">HARBOUR BLUE</p>
                 </div>
 
@@ -236,9 +227,9 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
-                <div className="text-right">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">SUB HEADER</p>
-                    <p className="text-xs text-muted-foreground mt-1">MULISH REGULAR, UPPER CASE</p>
+                <div className="text-left md:text-right">
+                    <p className="text-xs font-semibold text-[#335C70] uppercase tracking-wide">SUB HEADER</p>
+                    <p className="text-xs text-[#335C70] mt-1">MULISH REGULAR, UPPER CASE</p>
                     <p className="text-xs text-[#A2BAC5] mt-1">SEA MIST BLUE</p>
                   </div>
 
@@ -250,9 +241,9 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
-                <div className="text-right">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">BODY COPY</p>
-                    <p className="text-xs text-muted-foreground mt-1">MULISH REGULAR, SENTENCE CASE</p>
+                <div className="text-left md:text-right">
+                    <p className="text-xs font-semibold text-[#335C70] uppercase tracking-wide">BODY COPY</p>
+                    <p className="text-xs text-[#335C70] mt-1">MULISH REGULAR, SENTENCE CASE</p>
                     <p className="text-xs text-[#A2BAC5] mt-1">HARBOUR BLUE</p>
                   </div>
 
@@ -266,9 +257,9 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
-                <div className="text-right">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">BUTTON</p>
-                    <p className="text-xs text-muted-foreground mt-1">MULISH SEMIBOLD, TITLE CASE</p>
+                <div className="text-left md:text-right">
+                    <p className="text-xs font-semibold text-[#335C70] uppercase tracking-wide">BUTTON</p>
+                    <p className="text-xs text-[#335C70] mt-1">MULISH SEMIBOLD, TITLE CASE</p>
                     <p className="text-xs text-[#A2BAC5] mt-1">CHALK LINEN</p>
                   </div>
 
