@@ -122,8 +122,8 @@ function App() {
         </Section>
       )}
 
-      {data.fullwidthBlocks && data.fullwidthBlocks[0] && (
-        <FullwidthBlock block={data.fullwidthBlocks[0]} />
+      {data.fullwidthBlocks && data.fullwidthBlocks[1] && (
+        <FullwidthBlock block={data.fullwidthBlocks[1]} />
       )}
 
       {data.colors && data.colors.length > 0 && (
@@ -132,8 +132,8 @@ function App() {
         </Section>
       )}
 
-      {data.fullwidthBlocks && data.fullwidthBlocks[1] && (
-        <FullwidthBlock block={data.fullwidthBlocks[1]} />
+      {data.fullwidthBlocks && data.fullwidthBlocks[2] && (
+        <FullwidthBlock block={data.fullwidthBlocks[2]} />
       )}
 
       {data.typography && (

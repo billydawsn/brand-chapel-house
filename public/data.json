@@ -60,16 +60,16 @@
   ],
   "fullwidthBlocks": [
     {
+      "image": "/assets/fullwidth/image-0.webp",
+      "alt": "Brand showcase"
+    },
+    {
       "image": "/assets/fullwidth/image-1.webp",
       "alt": "Brand showcase"
     },
     {
       "image": "/assets/fullwidth/image-2.webp",
       "alt": "Design inspiration"
-    },
-    {
-      "image": "/assets/fullwidth/image-3.webp",
-      "alt": "Creative example"
     }
   ],
  "colors": [
