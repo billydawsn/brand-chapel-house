@@ -9,7 +9,7 @@ interface IncorrectUsageBlockProps {
 export function IncorrectUsageBlock({ items }: IncorrectUsageBlockProps) {
   return (
     <Container>
-      <p className="text-main-blue mt-3 mb-8 max-w-3xl">Lorem ipsum dolor sit amet , consec tetur adipiscing elit , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat . Duis aute irure dolor in reprehenderit in.</p>
+      <p className="text-main-blue mt-3 mb-8 max-w-3xl">Only approved logo assets should ever be used. To protect brand consistency, the following uses of the logo are not permitted:</p>
       <div className="grid gap-8 grid-cols-2 lg:grid-cols-3 mt-8">
       {items.map((item, idx) => (
         <div

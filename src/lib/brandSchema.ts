@@ -75,6 +75,7 @@ const TypographySchema = z.object({
 const GalleryItemSchema = z.object({
   caption: z.string(),
   src: z.string(),
+  link: z.string().optional(),
 })
 
 // Incorrect Usage Schema

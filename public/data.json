@@ -435,5 +435,23 @@
       }
     ]
   },
-  "gallery": []
+  "gallery": [
+    {
+      "src": "/assets/gallery/image-1.webp",
+      "caption": "Brand application example 1 caption"
+    },
+    {
+      "src": "/assets/gallery/image-2.webp",
+      "caption": "Brand application example 2 caption"
+    },
+    {
+      "src": "/assets/gallery/image-3.webp",
+      "caption": "Brand application example 3 caption",
+      "link": "https://example.com"
+    },
+    {
+      "src": "/assets/gallery/image-4.webp",
+      "caption": "Brand application example 4 caption"
+    }
+  ]
 }

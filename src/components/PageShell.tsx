@@ -87,9 +87,9 @@ export function PageShell({ brand, sections, children }: PageShellProps) {
       {/* Footer */}
       <footer className="">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-center text-sm text-main-blue">
+          {/* <p className="text-center text-sm text-main-blue">
             Made with ❤️ by Seed
-          </p>
+          </p> */}
         </div>
       </footer>
     </div>

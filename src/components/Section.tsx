@@ -10,6 +10,10 @@ interface SectionProps {
 }
 
 export function Section({ id, title, description, children, className = "" }: SectionProps) {
+  const descriptionParagraphs = description 
+    ? description.split(/\\n|\n/).filter(p => p.trim()) 
+    : []
+  
   return (
     <section id={id} className={`scroll-mt-20 ${className}`}>
       <Container>
@@ -17,8 +21,12 @@ export function Section({ id, title, description, children, className = "" }: Se
           {title &&
             <h2 className="text-3xl font-bold tracking-tight mb-0">{title}</h2>
           }
-          {description && (
-            <p className=" text-main-blue mb-10 md:col-span-2 max-w-2xl">{description}</p>
+          {descriptionParagraphs.length > 0 && (
+            <div className="text-main-blue mb-10 md:col-span-2 max-w-2xl space-y-4">
+              {descriptionParagraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
           )}
         </div>
       </Container>

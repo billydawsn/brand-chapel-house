@@ -35,8 +35,9 @@ export function LogoBlock({ logos }: LogoBlockProps) {
                     <div className="flex gap-2">
                       <Button
                         size="sm"
-                        variant="outline"
+                        variant="ghost"
                         asChild
+                        className="rounded-none"
                       >
                         <a
                           href={assetUrl(variant.assetPath)}
