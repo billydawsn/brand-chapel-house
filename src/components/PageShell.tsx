@@ -2,6 +2,7 @@ import { type ReactNode, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { BrandInfo } from "@/lib/brandSchema"
+import { assetUrl } from "@/lib/asset"
 
 interface PageShellProps {
   brand: BrandInfo
@@ -31,7 +32,7 @@ export function PageShell({ brand, sections, children }: PageShellProps) {
               {/* Logo */}
               {brand.logo && (
                 <img
-                  src={brand.logo}
+                  src={assetUrl(brand.logo)}
                   alt={`${brand.name} logo`}
                   className="h-20 w-auto object-contain"
                 />
