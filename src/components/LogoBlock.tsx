@@ -30,7 +30,7 @@ export function LogoBlock({ logos }: LogoBlockProps) {
                       className="max-h-full max-w-full object-contain"
                     />
                   </div>
-                  <div className="flex items-center ml-auto gap-4 mr-4">
+                  <div className="flex items-center ml-auto gap-4 mr-4 text-[#A2BAC5]">
                     <span className="text-sm font-medium">PNG / SVG</span>
                     <div className="flex gap-2">
                       <Button

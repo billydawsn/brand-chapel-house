@@ -26,8 +26,8 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
   const showTabs = typography.fonts.length > 1 || typography.examples.length > 0
 
   const typePreviews = {
-    'martel': 'welcome to chapel house',
-    'mulish': 'Explore the varied beauty of West Cornwall',
+    'Martel': 'Welcome to Chapel House',
+    'Mulish': 'Explore the varied beauty of West Cornwall',
   } as { [key: string]: string }
 
   return (
@@ -104,7 +104,7 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
                     <div className="col-span-1 md:col-span-2">
                       
                       <div className="flex gap-3 items-center mb-6 ">
-                        <CardTitle className="lowercase text-main-blue" style={{
+                        <CardTitle className="text-main-blue" style={{
                         fontFamily: font.name,
                         fontWeight: 300
                         }}>{font.name}</CardTitle>
@@ -168,7 +168,7 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
                                         }}
                                         className="text-main-blue md:text-right"
                                       >
-                                        {typePreviews[font.name.toLowerCase()] || 'welcome to chapel house'}
+                                        {typePreviews[font.name.toLowerCase()] || 'Welcome to Chapel House'}
                                       </p>
                                     </div>
                                   </div>
@@ -221,7 +221,7 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
 
                 <div className="md:col-span-2">
                   <h1 className="text-5xl md:text-6xl text-[#335C70]" style={{ fontFamily: 'Martel', fontWeight: 400 }}>
-                    workshops at chapel house
+                    Workshops at Chapel House
                   </h1>
                 </div>
               </div>
@@ -390,7 +390,7 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
                         }}
                         className="text-main-blue"
                       >
-                        welcome to chapel house
+                        Welcome to Chapel House
                       </p>
                     ))}
                   </div>
@@ -408,7 +408,7 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
                         }}
                         className="text-main-blue"
                       >
-                        welcome to chapel house
+                        Welcome to Chapel House
                       </p>
                     ))}
                   </div>
@@ -425,15 +425,15 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
 
 function getWeightName(weight: number): string {
   const weightNames: Record<number, string> = {
-    100: "thin",
-    200: "extra light",
-    300: "light",
-    400: "regular",
-    500: "medium",
-    600: "semi bold",
-    700: "bold",
-    800: "extra bold",
-    900: "black",
+    100: "Thin",
+    200: "Extra Light",
+    300: "Light",
+    400: "Regular",
+    500: "Medium",
+    600: "Semi Bold",
+    700: "Bold",
+    800: "Extra Bold",
+    900: "Black",
   }
   return weightNames[weight] || `weight ${weight}`
 }
