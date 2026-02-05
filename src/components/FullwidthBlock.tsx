@@ -3,11 +3,12 @@ import type { FullwidthBlock as FullwidthBlockType } from "@/lib/brandSchema"
 
 interface FullwidthBlockProps {
   block: FullwidthBlockType
+  className?: string
 }
 
-export function FullwidthBlock({ block }: FullwidthBlockProps) {
+export function FullwidthBlock({ block, className }: FullwidthBlockProps) {
   return (
-    <div className="relative w-full overflow-hidden rounded-none">
+    <div className={`relative w-full overflow-hidden rounded-none ${className || ""}`}>
       {block.image && (
         <div className="relative w-full aspect-[21/9] bg-muted/50">
           <img

@@ -62,9 +62,9 @@ export function ColorPaletteBlock({ colors }: ColorPaletteBlockProps) {
       {roles.length > 1 && (
         <Tabs value={selectedRole} onValueChange={setSelectedRole} className="w-full bg-transparent">
           <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto bg-transparent gap-2">
-            <TabsTrigger value="all" className="border-2 rounded-sm cursor-pointer">All Colors</TabsTrigger>
+            <TabsTrigger value="all">All Colors</TabsTrigger>
             {roles.map((role) => (
-              <TabsTrigger key={role} value={role} className="border-2 rounded-sm cursor-pointer">
+              <TabsTrigger key={role} value={role}>
                 {role}
               </TabsTrigger>
             ))}
@@ -91,7 +91,7 @@ export function ColorPaletteBlock({ colors }: ColorPaletteBlockProps) {
               style={{ backgroundColor: color.values.hex }}
             />
             <CardHeader className="pb-4">
-              <CardTitle className="text-lg">
+              <CardTitle className="text-lg text-[#335C70]">
                 {color.name}
                 {color.opacity && (
                   <div className="text-sm font-normal text-muted-foreground mt-1">

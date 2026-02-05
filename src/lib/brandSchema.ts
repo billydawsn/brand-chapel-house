@@ -104,6 +104,7 @@ const BrandInfoSchema = z.object({
   description: z.string().optional(),
   website: z.string().url().optional(),
   updatedAt: z.string(),
+  logo: z.string().optional(),
 })
 
 // Main Brand Guidelines Schema

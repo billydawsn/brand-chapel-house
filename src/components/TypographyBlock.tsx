@@ -40,12 +40,12 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
             <div className="col-span-1 md:col-span-2 md:col-start-2">
               <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto bg-transparent gap-2">
                 {typography.fonts.map((font, idx) => (
-                  <TabsTrigger key={idx} value={idx.toString()} className="border-2 rounded-sm cursor-pointer">
+                  <TabsTrigger key={idx} value={idx.toString()}>
                     {font.name}
                   </TabsTrigger>
                 ))}
                 {typography.examples.length > 0 && (
-                  <TabsTrigger value="hierarchy" className="border-2 rounded-sm cursor-pointer">Hierarchy</TabsTrigger>
+                  <TabsTrigger value="hierarchy">Hierarchy</TabsTrigger>
                 )}
               </TabsList>
             </div>

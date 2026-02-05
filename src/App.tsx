@@ -96,12 +96,16 @@ function App() {
   return (
     <PageShell brand={data.brand} sections={sections}>
 
-      <Section id="brand" title="Brand" className="mt-10"description="Chapel House is a calm, considered coastal brand rooted in comfort, quality and understated elegance. The visual identity reflects a balance between heritage and modern living, drawing inspiration from natural textures, seaside tones and relaxed interiors. Every application of the brand should feel warm, welcoming and timeless rather than trend-led or decorative. Consistency across all touch points is essential to maintain recognition and protect the integrity of the brand.">
+      {data.fullwidthBlocks && data.fullwidthBlocks[0] && (
+        <FullwidthBlock className="mt-0" block={data.fullwidthBlocks[0]} />
+      )}
+
+      <Section id="brand" title="Brand" className="mt-10" description="Chapel House is a calm, considered coastal brand rooted in comfort, quality and understated elegance. The visual identity reflects a balance between heritage and modern living, drawing inspiration from natural textures, seaside tones and relaxed interiors. Every application of the brand should feel warm, welcoming and timeless rather than trend-led or decorative. Consistency across all touch points is essential to maintain recognition and protect the integrity of the brand.">
         <></>
       </Section>
 
-      {data.fullwidthBlocks && data.fullwidthBlocks[0] && (
-        <FullwidthBlock block={data.fullwidthBlocks[0]} />
+      {data.fullwidthBlocks && data.fullwidthBlocks[1] && (
+        <FullwidthBlock block={data.fullwidthBlocks[1]} />
       )}
 
       {data.logos && data.logos.length > 0 && (
@@ -111,19 +115,19 @@ function App() {
       )}
 
       {data.exclusionZone && (
-        <Section id="exclusion-zone">
+        <Section id="exclusion-zone" title="Exclusion Zone" description="To preserve clarity and impact, the logo must always be surrounded by a clear space free from text, imagery or graphic elements.\nThe exclusion zone is defined by the height of the central emblem within the logo. This measurement should be applied equally on all sides.\nNo elements should enter this space under any circumstances.">
           <ExclusionZoneBlock exclusionZone={data.exclusionZone} />
         </Section>
       )}
 
       {data.incorrectUsage && data.incorrectUsage.length > 0 && (
-        <Section id="incorrect-usage" title="Incorrect Usage">
+        <Section id="incorrect-usage" title="Incorrect Usage" description="Only approved logo assets should ever be used. To protect brand consistency, the following uses of the logo are not permitted:">
           <IncorrectUsageBlock items={data.incorrectUsage} />
         </Section>
       )}
 
-      {data.fullwidthBlocks && data.fullwidthBlocks[1] && (
-        <FullwidthBlock block={data.fullwidthBlocks[1]} />
+      {data.fullwidthBlocks && data.fullwidthBlocks[2] && (
+        <FullwidthBlock block={data.fullwidthBlocks[2]} />
       )}
 
       {data.colors && data.colors.length > 0 && (
@@ -132,8 +136,8 @@ function App() {
         </Section>
       )}
 
-      {data.fullwidthBlocks && data.fullwidthBlocks[2] && (
-        <FullwidthBlock block={data.fullwidthBlocks[2]} />
+      {data.fullwidthBlocks && data.fullwidthBlocks[3] && (
+        <FullwidthBlock block={data.fullwidthBlocks[3]} />
       )}
 
       {data.typography && (
@@ -142,8 +146,12 @@ function App() {
         </Section>
       )}
 
+      {data.fullwidthBlocks && data.fullwidthBlocks[4] && (
+        <FullwidthBlock block={data.fullwidthBlocks[4]} />
+      )}
+
       {data.gallery && data.gallery.length > 0 && (
-        <Section id="gallery" className="mt-32" title="Application" description="The Chapel House brand should be applied consistently across all applications to create a calm, refined and recognisable presence. Colour, typography and imagery should be used with restraint, allowing space and balance to lead each layout. Clarity and simplicity should always take priority, ensuring the brand feels timeless, intentional and true to the Chapel House character.">
+        <Section id="gallery" className="mt-20" title="Application" description="The Chapel House brand should be applied consistently across all applications to create a calm, refined and recognisable presence. Colour, typography and imagery should be used with restraint, allowing space and balance to lead each layout. Clarity and simplicity should always take priority, ensuring the brand feels timeless, intentional and true to the Chapel House character.">
           <GalleryBlock gallery={data.gallery} />
         </Section>
       )}

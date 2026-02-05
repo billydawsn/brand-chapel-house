@@ -3,7 +3,8 @@
     "name": "Chapel House",
     "description": "These guidelines will provide you with everything you need to implement Seed’s brand identity in the right way. ",
     "website": "https://helloseed.co.uk/",
-    "updatedAt": "2026-01-14"
+    "updatedAt": "2026-01-14",
+    "logo": "/assets/logos/main-logo.svg"
   },
   "logos": [
     {
@@ -64,12 +65,20 @@
       "alt": "Brand showcase"
     },
     {
+      "image": "/assets/fullwidth/chair.webp",
+      "alt": "Brand showcase"
+    },
+    {
       "image": "/assets/fullwidth/image-1.webp",
       "alt": "Brand showcase"
     },
     {
       "image": "/assets/fullwidth/image-2.webp",
       "alt": "Design inspiration"
+    },
+    {
+      "image": "/assets/fullwidth/image-3.webp",
+      "alt": "Bathroom"
     }
   ],
  "colors": [
@@ -447,7 +456,7 @@
     {
       "src": "/assets/gallery/image-3.webp",
       "caption": "Brand application example 3 caption",
-      "link": "https://example.com"
+      "link": "https://www.canva.com/folder/FAHASu-Fry0"
     },
     {
       "src": "/assets/gallery/image-4.webp",

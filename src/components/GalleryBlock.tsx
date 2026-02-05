@@ -11,7 +11,7 @@ export function GalleryBlock({ gallery }: GalleryBlockProps) {
 
   return (
     <>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 mt-8">
         {gallery.map((item, index) => (
             <a href={item.link} className={`${colSpans[index % colSpans.length]}`} target="_blank" rel=" noreferrer">
             <img
