@@ -214,9 +214,9 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-8">
 
                 <div className="text-left md:text-right">
-                  <p className="text-xs font-semibold text-[#335C70] uppercase tracking-wide">TITLE</p>
-                  <p className="text-xs text-[#335C70] mt-1">MARTEL REGULAR, LOWER CASE</p>
-                  <p className="text-xs text-[#A2BAC5] mt-1">HARBOUR BLUE</p>
+                  <p className="text-xs font-semibold text-[#335C70] tracking-wide">Title</p>
+                  <p className="text-xs text-[#335C70] mt-1">Martel Regular, </p>
+                  <p className="text-xs text-[#A2BAC5] mt-1">Harbour Blue</p>
                 </div>
 
                 <div className="md:col-span-2">
@@ -228,9 +228,9 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
                 <div className="text-left md:text-right">
-                    <p className="text-xs font-semibold text-[#335C70] uppercase tracking-wide">SUB HEADER</p>
-                    <p className="text-xs text-[#335C70] mt-1">MULISH REGULAR, UPPER CASE</p>
-                    <p className="text-xs text-[#A2BAC5] mt-1">SEA MIST BLUE</p>
+                    <p className="text-xs font-semibold text-[#335C70] tracking-wide">Sub Header</p>
+                    <p className="text-xs text-[#335C70] mt-1">Mulish Regular, Upper Case</p>
+                    <p className="text-xs text-[#A2BAC5] mt-1">Sea Mist Blue + Chalk Linen</p>
                   </div>
 
                 <div className="md:col-span-2">
@@ -242,9 +242,9 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
                 <div className="text-left md:text-right">
-                    <p className="text-xs font-semibold text-[#335C70] uppercase tracking-wide">BODY COPY</p>
-                    <p className="text-xs text-[#335C70] mt-1">MULISH REGULAR, SENTENCE CASE</p>
-                    <p className="text-xs text-[#A2BAC5] mt-1">HARBOUR BLUE</p>
+                    <p className="text-xs font-semibold text-[#335C70] tracking-wide">Body Copy</p>
+                    <p className="text-xs text-[#335C70] mt-1">Mulish Regular, Sentence Case</p>
+                    <p className="text-xs text-[#A2BAC5] mt-1">Harbour Blue</p>
                   </div>
 
                 <div className="md:col-span-2">
@@ -258,9 +258,9 @@ export function TypographyBlock({ typography }: TypographyBlockProps) {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center border-t py-8">
                 <div className="text-left md:text-right">
-                    <p className="text-xs font-semibold text-[#335C70] uppercase tracking-wide">BUTTON</p>
-                    <p className="text-xs text-[#335C70] mt-1">MULISH SEMIBOLD, TITLE CASE</p>
-                    <p className="text-xs text-[#A2BAC5] mt-1">CHALK LINEN</p>
+                    <p className="text-xs font-semibold text-[#335C70] tracking-wide">Button</p>
+                    <p className="text-xs text-[#335C70] mt-1">Mulish Semibold, Title Case</p>
+                    <p className="text-xs text-[#A2BAC5] mt-1">Chalk Linen</p>
                   </div>
 
                  <div className="md:col-span-2">

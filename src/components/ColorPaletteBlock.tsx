@@ -37,9 +37,14 @@ export function ColorPaletteBlock({ colors }: ColorPaletteBlockProps) {
       if (b === "Primary") return 1
       if (a === "Secondary") return -1
       if (b === "Secondary") return 1
+
       return a.localeCompare(b)
     })
+
   }, [colors])
+
+  // remove "Primary" and "Secondary" from roles array to avoid duplication in tabs
+  const filteredRoles = roles.filter(role => role !== "Primary" && role !== "Secondary")
 
   const [selectedRole, setSelectedRole] = useState<string>("all")
 
@@ -59,13 +64,14 @@ export function ColorPaletteBlock({ colors }: ColorPaletteBlockProps) {
     <Container>
       <div className="space-y-6 mt-6">
       {/* Role Filter Tabs */}
-      {roles.length > 1 && (
+      {filteredRoles.length > 1 && (
         <Tabs value={selectedRole} onValueChange={setSelectedRole} className="w-full bg-transparent">
           <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto bg-transparent gap-2">
             <TabsTrigger value="all">All Colors</TabsTrigger>
-            {roles.map((role) => (
+            {filteredRoles.map((role) => (
               <TabsTrigger key={role} value={role}>
-                {role}
+                {/* remove "Opacity" from role names */}
+                {role.replace(" Opacity", "")}
               </TabsTrigger>
             ))}
           </TabsList>

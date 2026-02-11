@@ -136,6 +136,246 @@
         "rgb": "238, 206, 142",
         "cmyk": "0, 13, 40, 7"
       }
+    },
+    {
+      "name": "Harbour Blue",
+      "opacity": "100%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#335C70",
+        "rgb": "51, 92, 112",
+        "cmyk": "54, 18, 0, 56"
+      }
+    },
+    {
+      "name": "Harbour Blue",
+      "opacity": "75%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#668594",
+        "rgb": "102, 181, 148",
+        "cmyk": "42, 0, 18, 29"
+      }
+    },
+    {
+      "name": "Harbour Blue",
+      "opacity": "50%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#99ADB7",
+        "rgb": "153, 173, 183",
+        "cmyk": "16, 5, 0, 28"
+      }
+    },
+    {
+      "name": "Harbour Blue",
+      "opacity": "25%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#CCD6DB",
+        "rgb": "204, 214, 219",
+        "cmyk": "7, 2, 0, 14"
+      }
+    },
+    {
+      "name": "Chalk Linen",
+      "opacity": "100%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#F3EFE6",
+        "rgb": "243, 239, 230",
+        "cmyk": "0, 2, 5, 5"
+      }
+    },
+    {
+      "name": "Chalk Linen",
+      "opacity": "75%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#F6F3EC",
+        "rgb": "246, 243, 236",
+        "cmyk": "0, 1, 4, 4"
+      }
+    },
+    {
+      "name": "Chalk Linen",
+      "opacity": "50%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#F9F7F3",
+        "rgb": "249, 247, 243",
+        "cmyk": "0, 1, 2, 2"
+      }
+    },
+    {
+      "name": "Chalk Linen",
+      "opacity": "25%",
+      "role": [
+        "Primary Opacity"
+      ],
+      "values": {
+        "hex": "#FCFBF9",
+        "rgb": "252, 251, 249",
+        "cmyk": "0, 0, 1, 1"
+      }
+    },
+    {
+      "name": "Sea Mist Blue",
+      "opacity": "100%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#A2BAC5",
+        "rgb": "162, 186, 197",
+        "cmyk": "18, 6, 0, 23"
+      }
+    },
+    {
+      "name": "Sea Mist Blue",
+      "opacity": "75%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#B9CBD3",
+        "rgb": "185, 203, 211",
+        "cmyk": "12, 4, 0, 17"
+      }
+    },
+    {
+      "name": "Sea Mist Blue",
+      "opacity": "50%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#D1DDE2",
+        "rgb": "209, 221, 226",
+        "cmyk": "8, 2, 0, 11"
+      }
+    },
+    {
+      "name": "Sea Mist Blue",
+      "opacity": "25%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#E8EEF1",
+        "rgb": "232, 238, 241",
+        "cmyk": "4, 1, 0, 5"
+      }
+    },
+    {
+      "name": "Burnt Clay",
+      "opacity": "100%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#D87337",
+        "rgb": "216, 115, 55",
+        "cmyk": "0, 47, 75, 15"
+      }
+    },
+    {
+      "name": "Burnt Clay",
+      "opacity": "75%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#E29669",
+        "rgb": "226, 150, 105",
+        "cmyk": "0, 34, 54, 11"
+      }
+    },
+    {
+      "name": "Burnt Clay",
+      "opacity": "50%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#EBB99B",
+        "rgb": "235, 185, 155",
+        "cmyk": "0, 21, 34, 8"
+      }
+    },
+    {
+      "name": "Burnt Clay",
+      "opacity": "25%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#F5DCCD",
+        "rgb": "245, 220, 205",
+        "cmyk": "0, 10, 16, 4"
+      }
+    },
+    {
+      "name": "Golden Shore",
+      "opacity": "100%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#EECE8E",
+        "rgb": "238, 206, 142",
+        "cmyk": "0, 13, 40, 7"
+      }
+    },
+    {
+      "name": "Golden Shore",
+      "opacity": "75%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#F2DAAA",
+        "rgb": "242, 218, 170",
+        "cmyk": "0, 10, 30, 5"
+      }
+    },
+    {
+      "name": "Golden Shore",
+      "opacity": "50%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#F7E7C7",
+        "rgb": "247, 231, 199",
+        "cmyk": "0, 6, 19, 3"
+      }
+    },
+    {
+      "name": "Golden Shore",
+      "opacity": "25%",
+      "role": [
+        "Secondary Opacity"
+      ],
+      "values": {
+        "hex": "#FBF3E3",
+        "rgb": "251, 243, 227",
+        "cmyk": "0, 3, 10, 2"
+      }
     }
   ],
   "typography": {
